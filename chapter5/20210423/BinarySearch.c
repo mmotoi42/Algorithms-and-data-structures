@@ -2,22 +2,20 @@
 
 int	BinarySearch(int len, int a[len], int n)
 {
-	// a[mid] < n or a[mid] > n
 	int f = 0;
 	int l = len - 1;
 	int mid = (l + f) / 2;
-	int found = 0;
-	while (a[mid] != n && f != l)
+	while (f < l)
 	{
+		mid = (l + f) / 2;
+		if (a[mid] == n)
+			return (1);
 		if (n > a[mid])
 			f = mid + 1;
 		else if (n < a[mid])
 			l = mid - 1;
-		mid = (l + f) / 2;
 	}
-	if (a[mid] == n)
-		found = 1;
-	return (found);
+	return (0);
 }
 
 int main()
