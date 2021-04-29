@@ -9,6 +9,14 @@ int main()
 		cin >> a[i];
 	for (int i = 1; i < n; i++)
 	{
+	    for (int j = 0; j < n; j++)
+		{
+			cout << a[j];
+			if (j != n - 1)
+			    cout << ' ';
+		}
+		if (i != n - 1)
+		    cout << endl;
 		int v = a[i];
 		int j = i - 1;
 		while (j >= 0 && v < a[j])
@@ -18,7 +26,11 @@ int main()
 		}
 		a[j + 1] = v;
 	}
-	for (int i = 0; i < n; i++)
-		cout << a[i] << ' ';
 	cout << endl;
+	for (int j = 0; j < n; j++)
+    {
+		cout << a[j];
+		if (j != n - 1)
+		    cout << ' ';
+	}
 }
